@@ -1,0 +1,30 @@
+#!/bin/bash
+
+OUTPUT=$(git status --porcelain | grep .js$ | xargs eslint --color)
+
+SNIDE_REMARKS[0]="This is like being in a house built by a child using nothing but a hatchet and a picture of a house."
+SNIDE_REMARKS[1]="It's like a salad recipe written by a corporate lawyer using a phone autocorrect that only knew excel formulas."
+SNIDE_REMARKS[2]="It's like someone took a transcript of a couple arguing at IKEA and made random edits until it compiled without errors."
+SNIDE_REMARKS[3]="It's like you ran OCR on a photo of a scrabble board from a game where Javascript reserved words counted for triple points."
+SNIDE_REMARKS[4]="It looks like someone transcribed a naval weather forecast while woodpeckers hammered their shift keys, then randomly indented it."
+SNIDE_REMARKS[5]="It's like an E. E. Cummings poem written using only the usernames a website suggests when the one you want is taken."
+SNIDE_REMARKS[6]="This looks like the output of a markov bot that's been fed bus timetables from a city where the buses crash constantly."
+SNIDE_REMARKS[7]="Your code looks like song lyrics written using only the stuff that comes after the question mark in a URL."
+SNIDE_REMARKS[8]="It's like a JSON table of model numbers for flashlights with \"tactical\" in their names."
+SNIDE_REMARKS[9]="It's like you read Turing's 1936 paper on computing and a page of Javascript example code and guessed at everything in between."
+SNIDE_REMARKS[10]="It's like a leet-speak translation of a manifesto by a survivalist cult leader who's for some reason obsessed with memory allocation."
+SNIDE_REMARKS[11]="It's like you tried to define a formal grammar based on fragments of a raw database dump from the QuickBooks file of a company that's about to crash in an accounting scandal."
+SNIDE_REMARKS[12]="It's like a half-solved cryptogram where the solution is a piece of FORTH code written by someone who doesn't know FORTH."
+
+if [[ $OUTPUT =~ .*error.* ]] 
+then
+    INDEX=$(( $RANDOM % 13)) #Not unbiased
+    echo -e " \033[1;31m XKCD-BOT FOUND PROBLEMS WITH YOUR STYLE.\n  XKCD-BOT: ${SNIDE_REMARKS[$INDEX]} \033[0m \n$OUTPUT";
+    exit 1
+elif [[ $OUTPUT =~ .*warning.* ]]
+then
+    echo -e "$OUTPUT";
+    exit 0
+else
+    exit 0
+fi
