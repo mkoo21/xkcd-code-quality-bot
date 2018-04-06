@@ -19,7 +19,7 @@ SNIDE_REMARKS[12]="It's like a half-solved cryptogram where the solution is a pi
 if [[ $OUTPUT =~ .*error.* ]] 
 then
     INDEX=$(( $RANDOM % 13)) #Not unbiased
-    echo -e " \033[1;31m XKCD-BOT FOUND PROBLEMS WITH YOUR STYLE.\n  XKCD-BOT: ${SNIDE_REMARKS[$INDEX]} \033[0m \n$OUTPUT";
+    echo -e "\033[1;31m  XKCD-BOT FOUND PROBLEMS WITH YOUR STYLE.\n  XKCD-BOT: ${SNIDE_REMARKS[$INDEX]} \033[0m \n$OUTPUT";
     exit 1
 elif [[ $OUTPUT =~ .*warning.* ]]
 then
