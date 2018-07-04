@@ -2,7 +2,7 @@
 
 Snarky code style reviewer, now automated _and_ consistent!
 
-This is a 'bot' written in bash for people who don't want to install python that will run eslint on all the files you've added/changed since the last commit and _automagically_ make snarky remarks if you have errors. Probably best used as a pre-commit hook (you are of course welcome to place it anywhere you might find it useful). 
+This is a 'bot' written in bash that will run eslint on all the files you've added/changed since the last commit and _automagically_ make snarky remarks if you have errors. Probably best used as a pre-commit hook (you are of course welcome to place it anywhere you might find it useful). 
 
 Requires __git__ and __eslint__, for obvious reasons. Eslint config is not included. Feel free to replace eslint with prettier, pep8, checkstyle, or whatever else you use. 
 
