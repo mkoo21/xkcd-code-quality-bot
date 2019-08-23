@@ -6,6 +6,6 @@ This is a 'bot' written in bash that will run eslint on all the files you've add
 
 Requires __git__ and __eslint__, for obvious reasons. Eslint config is not included. Feel free to replace eslint with prettier, flake8, checkstyle, or whatever else you use. 
 
-Inspired by the code quality XKCDs, which is also where the snarky comments come from. Replace the 'XKCD' in 'XKCD-BOT' with the ALL-CAPS name of that reviewer on your team who derives _way too much_ pleasure from being an asshole and slowing everyone down by complaining endlessly about very arbitrary code style 'issues' (and whose job is now mostly automated) for optimal results.
+Inspired by the code quality XKCDs, which is also where the snarky comments come from.
 
 Unfortunately _xkcd-bot_ does not know how to complain about your variable names. I'm working on it. 
